@@ -57,7 +57,7 @@ class BaseApi {
      * @param string $options
      */
     public function apiCall($httpMethod, $endpoint, $options) {
-
+        $httpMethod = strtolower($httpMethod);
         try{
             $url = $this->base_url."/".$endpoint;
             
@@ -112,6 +112,5 @@ class BaseApi {
         catch (Exception $exception){
             return  $exception->getMessage();
         };
-
     }
 }
